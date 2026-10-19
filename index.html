@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4a0715">
+    <title>Invitación | Cumpleaños de Jackeline</title>
+    <meta name="description" content="Estás invitado al cumpleaños de Jackeline, sábado 21 de noviembre de 2026.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- 1. HERO -->
+    <header class="hero parallax">
+        <div class="hero__content reveal">
+            <p class="hero__eyebrow">Celebra conmigo</p>
+            <h1 class="hero__name">Jackeline</h1>
+            <div class="divider divider--gold" aria-hidden="true"></div>
+            <p class="hero__date">21 · 11 · 2026</p>
+        </div>
+        <a href="#intro" class="hero__scroll" aria-label="Bajar a la invitación">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </a>
+    </header>
+
+    <!-- 2. FRASE -->
+    <section class="intro" id="intro">
+        <div class="container container--narrow reveal">
+            <i class="fas fa-quote-left intro__icon" aria-hidden="true"></i>
+            <blockquote class="intro__text">
+                Un cumpleaños mágico para celebrar la vida y disfrutar con las personas que más quiero.
+            </blockquote>
+            <div class="divider divider--wine" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- 3. SEPARADOR PARALLAX -->
+    <section class="separator parallax" aria-hidden="true">
+        <i class="fas fa-champagne-glasses separator__icon reveal"></i>
+    </section>
+
+    <!-- 4. DÓNDE Y CUÁNDO -->
+    <section class="details">
+        <div class="container">
+            <h2 class="section-title reveal">¿Dónde y cuándo?</h2>
+
+            <div class="cards">
+                <article class="card reveal">
+                    <div class="card__icon"><i class="far fa-calendar-check" aria-hidden="true"></i></div>
+                    <h3 class="card__title">La Fecha</h3>
+                    <p class="card__text">Sábado, 21 de noviembre</p>
+                    <p class="card__highlight">7:00 PM</p>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card__icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                    <h3 class="card__title">La Recepción</h3>
+                    <p class="card__text">Restaurante Mi Ñato</p>
+                    
+                    <a class="btn btn--outline" href="https://maps.app.goo.gl/u8GoPdquijnk8XsY8" target="_blank" rel="noopener noreferrer">
+                        Ver ubicación <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4.5 CARRUSEL DE FOTOS -->
+    <section class="gallery" aria-labelledby="gallery-title">
+        <div class="container">
+            <h2 class="section-title reveal" id="gallery-title">Mis Fotos</h2>
+
+            <div class="carousel reveal" id="carousel" aria-roledescription="carrusel" aria-label="Galería de fotos">
+                <div class="carousel__track" id="carousel-track" tabindex="0">
+                    <figure class="slide">
+                        <img class="slide__bg" src="img/img1.jpeg" alt="" aria-hidden="true">
+                        <img class="slide__img" src="img/img1.jpeg" alt="Foto 1 de Jackeline" width="800" height="1000">
+                    </figure>
+                    <figure class="slide">
+                        <img class="slide__bg" src="img/img2.jpeg" alt="" aria-hidden="true" loading="lazy">
+                        <img class="slide__img" src="img/img2.jpeg" alt="Foto 2 de Jackeline" loading="lazy">
+                    </figure>
+                    <figure class="slide">
+                        <img class="slide__bg" src="img/img3.jpeg" alt="" aria-hidden="true" loading="lazy">
+                        <img class="slide__img" src="img/img3.jpeg" alt="Foto 3 de Jackeline" loading="lazy">
+                    </figure>
+                    <figure class="slide">
+                        <img class="slide__bg" src="img/img4.jpeg" alt="" aria-hidden="true" loading="lazy">
+                        <img class="slide__img" src="img/img4.jpeg" alt="Foto 4 de Jackeline" loading="lazy">
+                    </figure>
+                    <figure class="slide">
+                        <img class="slide__bg" src="img/img5.jpeg" alt="" aria-hidden="true" loading="lazy">
+                        <img class="slide__img" src="img/img5.jpeg" alt="Foto 5 de Jackeline" loading="lazy">
+                    </figure>
+                    <figure class="slide">
+                        <img class="slide__bg" src="img/img6.jpeg" alt="" aria-hidden="true" loading="lazy">
+                        <img class="slide__img" src="img/img6.jpeg" alt="Foto 6 de Jackeline" loading="lazy">
+                    </figure>
+                </div>
+
+                <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Foto anterior">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <button class="carousel__btn carousel__btn--next" type="button" aria-label="Foto siguiente">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+
+                <div class="carousel__dots" id="carousel-dots" role="tablist" aria-label="Elegir foto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CUENTA REGRESIVA -->
+    <section class="countdown parallax" aria-labelledby="countdown-title">
+        <div class="container">
+            <h2 class="countdown__title reveal" id="countdown-title">Faltan</h2>
+
+            <div class="countdown__grid reveal" role="timer" aria-live="off">
+                <div class="countdown__box">
+                    <span class="countdown__number" id="days">00</span>
+                    <span class="countdown__label">Días</span>
+                </div>
+                <div class="countdown__box">
+                    <span class="countdown__number" id="hours">00</span>
+                    <span class="countdown__label">Hrs</span>
+                </div>
+                <div class="countdown__box">
+                    <span class="countdown__number" id="minutes">00</span>
+                    <span class="countdown__label">Min</span>
+                </div>
+                <div class="countdown__box">
+                    <span class="countdown__number" id="seconds">00</span>
+                    <span class="countdown__label">Seg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. VESTIMENTA -->
+    <section class="dress">
+        <div class="container container--narrow reveal">
+            <div class="dress__icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+            <h2 class="dress__title">Código de vestimenta</h2>
+            <p class="dress__code">Sport elegante</p>
+        </div>
+    </section>
+
+    <!-- 7. ASISTENCIA -->
+    <footer class="rsvp">
+        <div class="container container--narrow reveal">
+            <h2 class="rsvp__title">Asistencia</h2>
+            <p class="rsvp__text">Tu presencia es el mejor regalo. Por favor confirma tu asistencia para considerar tu lugar.</p>
+
+            <a id="whatsapp-btn" class="btn btn--whatsapp"
+               href="https://wa.me/51940669088?text=%C2%A1Hola%20Jackeline!%20Confirmo%20mi%20asistencia%20a%20tu%20cumplea%C3%B1os%20el%20s%C3%A1bado%2021%20de%20noviembre%20a%20las%207:00%20PM.%20%C2%A1Ah%C3%AD%20nos%20vemos!"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                Confirmar por WhatsApp
+            </a>
+
+            <div class="rsvp__closing">
+                <p class="rsvp__thanks">¡Te esperamos!</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
