@@ -141,7 +141,50 @@
         startAutoplay();
     }
 
+    /* ---------- Música ---------- */
+    function initMusic() {
+        var audio = document.getElementById('bg-audio');
+        var floatBtn = document.getElementById('music-toggle');
+        var floatIcon = document.getElementById('music-icon');
+        var heroBtn = document.getElementById('hero-play');
+        var heroText = document.getElementById('hero-play-text');
+        if (!audio) return;
+
+        // El botón y el audio siempre quedan sincronizados con el estado real
+        function render(playing) {
+            floatIcon.classList.toggle('fa-pause', playing);
+            floatIcon.classList.toggle('fa-play', !playing);
+            floatBtn.classList.toggle('is-playing', playing);
+            floatBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+            floatBtn.setAttribute('aria-label', playing ? 'Pausar música' : 'Reproducir música');
+
+            if (heroBtn) {
+                heroBtn.classList.toggle('is-playing', playing);
+                heroBtn.setAttribute('aria-label', playing ? 'Pausar música' : 'Reproducir música');
+                heroText.textContent = playing ? 'Pausar' : 'Dale Play';
+            }
+        }
+
+        function toggle() {
+            if (audio.paused) {
+                // play() devuelve una promesa que falla si el navegador lo bloquea
+                audio.play().catch(function () { render(false); });
+            } else {
+                audio.pause();
+            }
+        }
+
+        audio.addEventListener('play', function () { render(true); });
+        audio.addEventListener('pause', function () { render(false); });
+
+        floatBtn.addEventListener('click', toggle);
+        if (heroBtn) heroBtn.addEventListener('click', toggle);
+
+        render(false);
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+        initMusic();
         initReveal();
         initCountdown();
         initCarousel();
