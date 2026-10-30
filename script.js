@@ -141,6 +141,51 @@
         startAutoplay();
     }
 
+    /* ---------- Copiar datos del regalo ---------- */
+    function initCopy() {
+        var buttons = document.querySelectorAll('.gift__copy');
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            var ok = false;
+            try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+            document.body.removeChild(ta);
+            return ok;
+        }
+
+        function copyText(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                return navigator.clipboard.writeText(text).then(function () { return true; })
+                    .catch(function () { return fallbackCopy(text); });
+            }
+            return Promise.resolve(fallbackCopy(text));
+        }
+
+        buttons.forEach(function (btn) {
+            var label = btn.querySelector('span');
+            var icon = btn.querySelector('i');
+
+            btn.addEventListener('click', function () {
+                copyText(btn.getAttribute('data-copy')).then(function (ok) {
+                    label.textContent = ok ? '¡Copiado!' : 'No se pudo';
+                    btn.classList.toggle('is-copied', ok);
+                    icon.className = ok ? 'fas fa-check' : 'far fa-copy';
+                    setTimeout(function () {
+                        label.textContent = 'Copiar';
+                        btn.classList.remove('is-copied');
+                        icon.className = 'far fa-copy';
+                    }, 2000);
+                });
+            });
+        });
+    }
+
     /* ---------- Música ---------- */
     function initMusic() {
         var audio = document.getElementById('bg-audio');
@@ -185,6 +230,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         initMusic();
+        initCopy();
         initReveal();
         initCountdown();
         initCarousel();
