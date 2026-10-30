@@ -528,6 +528,88 @@ a { color: inherit; text-decoration: none; }
     line-height: 1.3;
 }
 
+/* ---------- 6.5 Regalo ---------- */
+.gift {
+    background: var(--cream);
+    text-align: center;
+    padding: 4rem 0;
+}
+.gift__icon {
+    display: grid;
+    place-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: rgba(107, 15, 34, 0.1);
+    color: var(--wine);
+    font-size: 1.75rem;
+}
+.gift .section-title { margin-bottom: 1rem; }
+.gift__text {
+    color: var(--text-soft);
+    margin-bottom: 2rem;
+}
+.gift__list {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.gift__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    border-top: 4px solid var(--wine);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(107, 15, 34, 0.08);
+}
+.gift__label {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--wine-dark);
+}
+.gift__number {
+    max-width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+.gift__copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    margin-top: 0.25rem;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--wine);
+    border-radius: 4px;
+    background: none;
+    color: var(--wine);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s;
+}
+.gift__copy:hover,
+.gift__copy:focus-visible,
+.gift__copy.is-copied {
+    background: var(--wine);
+    color: #fff;
+}
+
 /* ---------- 7. Asistencia ---------- */
 .rsvp {
     position: relative;
@@ -586,6 +668,8 @@ a { color: inherit; text-decoration: none; }
     .intro__text { font-size: 1.75rem; }
 
     .gallery { padding: 5.5rem 0; }
+    .gift { padding: 5.5rem 0; }
+    .gift__number { font-size: 1.4rem; }
     .carousel { max-width: 40rem; }
     .slide { aspect-ratio: 1 / 1; max-height: 75svh; }
 
